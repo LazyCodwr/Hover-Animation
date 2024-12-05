@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torch Effect By Lazy Codwr</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .maskdiv {
+            -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0, black 100px, transparent 100px);
+            mask-image: radial-gradient(circle at 50% 50%, black 0, black 100px, transparent 100px);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="main relative">
+        
+        <div class="maindiv w-full h-screen bg-black text-white">
+            <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-center">Torch Effect By lazy Codwr</h1>
+            <img class="w-full h-full object-cover opacity-5" src="https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+
+        <div class="maskdiv w-full h-screen absolute top-0 left-0 text-white">
+            <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-center text-transparent [-webkit-text-stroke:1px_white]" >Torch Effect By lazy Codwr</h1>
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+
+    </div>
+
+    <script>
+       let mask =  document.querySelector(".maskdiv")
+
+       document.addEventListener("mousemove",(e)=>{
+        let x = e.clientX
+        let y = e.clientY
+
+            mask.style.webkitMaskImage = `radial-gradient(circle at ${x}px ${y}px, black 0, black 100px, transparent 100px)`;
+            mask.style.maskImage = `radial-gradient(circle at ${x}px ${y}px, black 0, black 100px, transparent 100px)`;
+       })
+
+    </script>
+    
+</body>
+</html>
